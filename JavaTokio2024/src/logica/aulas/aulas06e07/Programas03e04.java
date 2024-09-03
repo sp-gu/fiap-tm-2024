@@ -1,10 +1,12 @@
 package logica.aulas.aulas06e07;
+import java.lang.reflect.Array;
+import java.math.*;
 import java.text.ParseException;
 import java.util.Scanner;
 
 public class Programas03e04 {
 	
-	public static void ex2 (String[] args) { // identifica maior
+	public static void ex2l1 (String[] args) { // identifica maior
 		Scanner ent = new Scanner(System.in);
 		System.out.print("Digite 2 num: ");
 		double num1 = ent.nextDouble();
@@ -20,7 +22,7 @@ public class Programas03e04 {
 		}
 	}
 	
-	public static void ex3 (String [] args) { // calcular media
+	public static void ex3l1 (String [] args) { // calcular media
 		Scanner ent = new Scanner(System.in);
 		System.out.print("Digite as notas dos 4b: ");
 		double num1 = ent.nextDouble();
@@ -51,9 +53,11 @@ public class Programas03e04 {
 		} else {
 			System.out.printf("Os num %s e %s NAO sao multiplos.", AS, BS);
 		}
+		ent.close();
 	}
 	
-	public static void ex5 (String [] args) { //calc basica
+	
+	public static void ex5l1 (String [] args) { //calc basica
 		Scanner ent = new Scanner(System.in);
 		System.out.print("Digite os 2 num e a op: ");
 		float A = Float.parseFloat(ent.nextLine()); //pega a entrada em str
@@ -86,7 +90,7 @@ public class Programas03e04 {
 		}//fim s/c
 	}
 		
-		public static void ex8 (String [] args) { // calcula autonomia km/L
+		public static void ex8l1 (String [] args) { // calcula autonomia km/L
 			Scanner ent = new Scanner(System.in);
 			System.out.print("Digite a distancia em km: ");
 			float km = Float.parseFloat(ent.nextLine()); //pega a entrada em str
@@ -100,8 +104,100 @@ public class Programas03e04 {
 			}
 		}
 		
-		public static void main (String [] args) { //ex9 --> fazer 
+		public static void ex11l1 (String [] args) {
+			Scanner ent = new Scanner(System.in);
+			System.out.println("Digite a UF de origem:");
+			int uf = Integer.parseInt(ent.nextLine());
+			System.out.println("Digite o peso da carga em ton");
+			double ton = Double.parseDouble(ent.nextLine());
+			System.out.println("Agora, digite o cod da carga: ");
+			double codigo = Double.parseDouble(ent.nextLine());
+			double valor = 0;
+			if(codigo >= 10 && codigo <= 20) {
+				valor = 100;
+			} else if (codigo >= 21 && codigo <= 30) {
+				valor = 250;
+			} else if (codigo >= 31 && codigo <= 40) {
+				valor = 340;
+			}
 			
+			double vt = ton * 1000 * valor;
+			double vf = 0, porc;
+			
+			switch (uf) {
+				case 1: porc = ((vt * 35)/100);
+				vf = vt + porc;
+				break;
+				case 2: porc = ((vt * 25)/100);
+				vf = vt + porc;
+				break;
+				case 3: porc = ((vt * 15)/100);
+				vf = vt + porc;
+				break;
+				case 4: porc = ((vt * 5)/100);
+				vf = vt + porc;
+				break;
+				case 5: vf = vt;
+				break;
+				default: System.out.println("Erro!");
+			}
+			String vfS = Double.toString(vf);
+			System.out.printf("O valor total e: %s", vfS);
 		}
 		
+	public static void ex1l2 (String [] args) { 
+		int res;
+		do {
+			System.out.println("Olá, Mundo");
+			System.out.println("Digite 1 p sair e 2 p ficar");
+			Scanner ent = new Scanner(System.in);
+			res = Integer.parseInt(ent.nextLine());
+		} while(res == 2); 
+	}
+		
+	public static void ex2l2 (String[] args) { // 10 em 10 até 100
+		int cont = 0;
+		System.out.println(cont);
+		do {
+			cont = cont + 10;
+			System.out.println(cont);
+		} while(cont != 100);
+	}
+	
+	public static void ex3l2 (String [] args) { // tabuada n até 25
+		Scanner ent = new Scanner(System.in);
+		System.out.print("Digite um num: ");
+		int n = Integer.parseInt(ent.nextLine());
+		int zero = 0, res = 0;
+		do {
+			res = n * zero;
+			System.out.println(n + " * " + zero + " = " + res);
+			zero++;
+		} while(zero != 26);
+	}
+	
+	public static void ex5l2 (String [] args) { // maior num
+		Scanner ent = new Scanner(System.in);
+		System.out.println("Digite 5 numeros: ");
+		int ver = 0;
+		
+		/* int maior = Math.max(num1, num2);
+		maior = Math.max(maior, num3);
+		maior = Math.max(maior, num4);
+		maior = Math.max(maior, num5); */
+		
+		for(int a = 0; a <= 5; a++) {
+			int num = Integer.parseInt(ent.nextLine());
+			if(num > ver) {
+				ver = num; 
+			}
+		}
+		String verS = Integer.toString(ver);
+		System.out.printf("O maior e %s", verS);
+	}
+	
+	public static void main (String [] args) { //ex6
+		
+	}
+	
 }
