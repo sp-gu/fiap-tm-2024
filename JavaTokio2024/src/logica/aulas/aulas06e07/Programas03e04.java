@@ -196,8 +196,18 @@ public class Programas03e04 {
 		System.out.printf("O maior e %s", verS);
 	}
 	
-	public static void main (String [] args) { //ex6
-		
+	public static void main (String [] args) { 
+		System.out.println("2");
+		for(int i = 2; i <= 2000; i++) {
+			for(int k = 2; k <= i; k++) {
+				if(i % k == 0) {
+					break;
+				} else {
+					System.out.println(i);
+					break;
+				}
+			}
+		}
 	}
 	
 }
