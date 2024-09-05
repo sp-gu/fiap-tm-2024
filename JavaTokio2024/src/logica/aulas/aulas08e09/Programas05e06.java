@@ -75,7 +75,8 @@ public class Programas05e06 {
 				if(i % k == 0) {
 					break;
 				} else {
-					primos = primos + i;
+					System.out.println(i);//imprime primos
+					primos = primos + 0;//erro - arrumar
 					break;
 				}
 			}
