@@ -58,7 +58,7 @@ public class Programas05e06 {
 		}
 	}
 	
-	public static void main (String [] args) {
+	public static void ex6l1 (String [] args) { //conta num par, impar e primos
 		Random rand = new Random();
 		int pares = 0, impares = 0, primos = 0;
 		for(int i = 0; i < 100; i++) {
@@ -86,5 +86,62 @@ public class Programas05e06 {
 		String primo = Integer.toString(primos);
 		System.out.printf("Foram sorteados %s pares, %s impares e %s primos", par, impar, primo);
 	}
+	
+	public static void ex3l2 (String [] args) { //preenche vetor n c double random
+		Scanner ent = new Scanner(System.in);
+		Random rand = new Random();
+		System.out.println("Digite um num: ");
+		int num = Integer.parseInt(ent.nextLine());
+		if(num < 0) {
+			System.out.println("Num < 0 | Digite outro.");
+			return;
+		}
+		double vet[] = new double[num];
+		for (int k = 0; k < vet.length; k++) {
+			vet[k] = rand.nextDouble();
+			System.out.println(vet[k]);
+			}
+		}
+	
+	public static void main (String [] args) { //ex4l2
+		Scanner ent = new Scanner(System.in);
+		System.out.print("Digite o num de alunos: ");
+		int num = Integer.parseInt(ent.nextLine());
+		if(num < 0) {
+			System.out.println("Num < 0 | Inicie dnv.");
+		}
+		double alunos[] = new double[num]; //??
+		double notaF, resT = 0, media = 0;
+		int acima = 0, abaixo = 0, igual = 0;
+		for(int i = 0; i < alunos.length; i++) {
+			System.out.printf("Digite a nota do aluno %i nos dois semestres: ", alunos [i+1]);
+			notaF = ((Integer.parseInt(ent.nextLine()) + Integer.parseInt(ent.nextLine())) /2);
+			alunos[i] = notaF;
+		} System.out.println("As notas foram salvas!");
+		for(int i = 0; i < alunos.length; i++) {
+			resT = resT + alunos[i];
+		} media = resT / alunos.length;
+		for(int i = 0; i < alunos.length; i++) {
+			if(alunos[i] > media) {
+				acima = acima+1;
+			} else if (alunos[i] < media) {
+				abaixo = abaixo+1;
+			} else if (alunos[i] == media){
+				igual = igual+1;
+			}
+		}
+		System.out.printf("%i alunos acima da media, %i abaixo e %i iguais", acima, abaixo, igual);
+		ent.close();
+	}
+	
+	public static void mm (String [] args) { //ex8l2
+		
+	}
+	
+	public static void mmm (String [] args) { //ex10l2
+		
+	}
+	
+	//criar próximo pacote
 	
 }
