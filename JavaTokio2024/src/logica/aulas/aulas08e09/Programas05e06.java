@@ -103,7 +103,7 @@ public class Programas05e06 {
 			}
 		}
 	
-	public static void main (String [] args) { //ex4l2
+	public static void ex4l2 (String [] args) { //calcula media da sala e separa conforme ela
 		Scanner ent = new Scanner(System.in);
 		System.out.print("Digite o num de alunos: ");
 		int num = Integer.parseInt(ent.nextLine());
@@ -114,8 +114,8 @@ public class Programas05e06 {
 		double notaF, resT = 0, media = 0;
 		int acima = 0, abaixo = 0, igual = 0;
 		for(int i = 0; i < alunos.length; i++) {
-			System.out.printf("Digite a nota do aluno %i nos dois semestres: ", alunos [i+1]);
-			notaF = ((Integer.parseInt(ent.nextLine()) + Integer.parseInt(ent.nextLine())) /2);
+			System.out.printf("Digite a nota do aluno %d nos dois semestres: ", i+1);
+			notaF = ((Integer.parseInt(ent.nextLine()) + Integer.parseInt(ent.nextLine())) / 2.0);
 			alunos[i] = notaF;
 		} System.out.println("As notas foram salvas!");
 		for(int i = 0; i < alunos.length; i++) {
@@ -130,18 +130,51 @@ public class Programas05e06 {
 				igual = igual+1;
 			}
 		}
-		System.out.printf("%i alunos acima da media, %i abaixo e %i iguais", acima, abaixo, igual);
+		System.out.printf("%d alunos acima da media, %d abaixo e %d iguais", acima, abaixo, igual);
 		ent.close();
 	}
 	
-	public static void mm (String [] args) { //ex8l2
-		
-	}
+	public static void main (String [] args) { //ex8l2
+		        // Exemplo de vetor para inverter
+		        int[] vetor = {1, 2, 3, 4, 5};
+
+		        // Exibir o vetor original
+		        System.out.println("Vetor original:");
+		        exibirVetor(vetor);
+
+		        // Inverter o vetor
+		        inverterVetor(vetor);
+
+		        // Exibir o vetor invertido
+		        System.out.println("Vetor invertido:");
+		        exibirVetor(vetor);
+		    }
+
+		    // Método para inverter o vetor
+		    public static void inverterVetor(int[] vetor) {
+		        int inicio = 0;
+		        int fim = vetor.length - 1;
+
+		        while (inicio < fim) {
+		            // Trocar elementos nas posições 'inicio' e 'fim'
+		            int temp = vetor[inicio];
+		            vetor[inicio] = vetor[fim];
+		            vetor[fim] = temp;
+
+		            // Avançar para as próximas posições
+		            inicio++;
+		            fim--;
+		        }
+		    }
+
+		    // Método para exibir os elementos do vetor
+		    public static void exibirVetor(int[] vetor) {
+		        for (int i : vetor) {
+		            System.out.print(i + " ");
+		        }
+		        System.out.println();
+		}
 	
-	public static void mmm (String [] args) { //ex10l2
-		
-	}
-	
-	//criar próximo pacote
+	// próximo pacote
 	
 }
